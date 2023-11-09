@@ -1,38 +1,154 @@
+/* App.css */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #333;
+  padding: 20px 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  color: #e5e5ea;
+}
+
+.chat-box {
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.messages {
+  height: 400px;
+  overflow-y: auto;
+  background: #e5e5ea;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.message {
+  background: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  align-self: center;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/*.message:nth-child(even) {
+  align-self: flex-end;
+  background: #007bff;
   color: white;
+}*/
+
+form {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid #ccc;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-right: 10px;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
 }
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #003d82;
+}
+
+button:focus {
+  outline: none;
+}
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #003d82;
+}
+/* Style pour l'input de type color */
+.color-picker {
+  -webkit-appearance: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #fff; /* Ajoute une bordure blanche pour mieux voir sur fond clair */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour supprimer le style par défaut de l'input color sur Chrome */
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* Style pour supprimer le style par défaut de l'input color sur Firefox */
+.color-picker::-moz-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* Ajoutez ceci si vous voulez un espace autour des éléments du formulaire pour ne pas coller aux bords */
+form {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: -20px; /* Ajustez selon votre mise en page */
+  overflow: hidden;
+}
+
+/* Style pour le bouton d'envoi pour qu'il s'aligne avec le champ de saisie */
+input[type="text"] {
+  flex-grow: 2; /* Donne plus d'espace au champ de texte par rapport au sélecteur de couleur */
+  margin-right: 0; /* Ajuste l'espacement si nécessaire */
+}
+
+/* Assurez-vous que le bouton 'Envoyer' est aligné avec les champs de saisie */
+button {
+  flex-shrink: 0; /* Empêche le bouton de rétrécir par rapport aux autres éléments flex */
+}
+
