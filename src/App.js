@@ -7,6 +7,7 @@ function App() {
   const [pseudo, setPseudo] = useState('');
   const [color, setColor] = useState('#000000');
    const socket = io('http://localhost:3001');
+    const [messages, setMessages] = useState([]);
 
 
   useEffect(() => {
